@@ -11,3 +11,26 @@ background-color:#7A8691;
 {
     margin-top:20px;
 }
+
+ul
+{
+    list-style-type: none;
+}
+
+footer{
+    margin-top: 40px;
+  background-color: #554842;
+  height: 100px;
+}
+
+footer .btn
+{
+  background-color: #554842;
+  line-height:86px;
+  transition: 2s;
+}
+
+.btn:hover {
+  background-color: #fff;
+  transition: background-color 2s;
+}
