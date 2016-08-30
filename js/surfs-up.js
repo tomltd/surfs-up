@@ -12,4 +12,7 @@ var nameOfToday = dayNames[theDay];
 var days = ["sun", "mon", "tue", "wed", "thur", "fri", "sat"];
 var now = new Date();
 var today = now.getDay();
-alert(days[today]);
+//alert(days[today]);
+
+
+console.log('hello');

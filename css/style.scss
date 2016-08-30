@@ -2,40 +2,18 @@ body {
 	margin: auto;
 	font-family: 'Kaushan Script', cursive;
 	background-color:#7A8691;
+}
+
+.wrapper {
+  display: flex;
+  flex-flow: wrap column;
 
 }
 
-.wrap {
-	margin: auto;
+.surfs-up:before {
+  content: 'Surfs Up';
 }
 
-.ms-footer
-{
-	margin-top:20px;
-
-}
-
-ul
-{
-	list-style-type: none;
-}
-
-footer{
-
-	margin-top: 40px;
-	background-color: #444;
-	height: 100px;
-}
-
-footer .btn
-{
-	background-color: #444;
-	line-height:86px;
-	transition: 1s;
-	width: 24%;
-}
-
-.btn:hover {
-	background-color: #2468d4;
-	transition: background-color 2s;
+.no-surf:before {
+  content: 'No surf right now';
 }
