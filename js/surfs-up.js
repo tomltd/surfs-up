@@ -16,3 +16,12 @@ var today = now.getDay();
 
 
 console.log('hello');
+
+
+
+(function() {
+  var seaweedAPI = "http://magicseaweed.com/api/e09cd1c1b299437bce992b12b4f69800/forecast/?spot_id=1";
+  $.getJSON( seaweedAPI, {
+
+  })
+})();
