@@ -18,7 +18,7 @@ var today = now.getDay();
 console.log('hello');
 
 
-var url = 'http://magicseaweed.com/api/e09cd1c1b299437bce992b12b4f69800/forecast/?spot_id=1398'
+var url = 'http://magicseaweed.com/api/e09cd1c1b299437bce992b12b4f69800/forecast/?spot_id=1398';
 
 $.ajax({
     dataType: "jsonp",
