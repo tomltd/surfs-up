@@ -12,7 +12,7 @@ var nameOfToday = dayNames[theDay];
 var days = ["sun", "mon", "tue", "wed", "thur", "fri", "sat"];
 var now = new Date();
 var today = now.getDay();
-//alert(days[today]);
+console.log(days[today]);
 
 
 console.log('hello');
@@ -25,18 +25,17 @@ $.ajax({
     url: url
 }).done(function(data) {
     console.log(data);
-    // The result is an array, so loop over each one
+    // The result is an array, so loop over each one.
     $.each(data, function() {
         // Do something with the item, e.g:
         var diff = this.swell.maxBreakingHeight - this.swell.minBreakingHeight;
         console.log(diff);
+        // Lets print out the rating with the time.
         var rating = this.fadedRating;
         var theTime = this.localTimestamp;
         console.log("The rating at" + theTime + " is " + rating);
     });
 });
-
-//console.log(data.["0"].solidRating);
 
 
 var rating = [];
@@ -54,8 +53,7 @@ for (var i = 0; i < forecast.fadedRating; i++) {
 document.getElementById("ratingContainer").innerHTML = rating.join(" ");
 
 
-// Date stuff
-
+// Date stuff.
 function formatDate(date, fmt) {
     function pad(value) {
         return (value.toString().length < 2) ? '0' + value : value;
