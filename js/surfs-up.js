@@ -18,10 +18,17 @@ var today = now.getDay();
 console.log('hello');
 
 
+var url = 'http://magicseaweed.com/api/e09cd1c1b299437bce992b12b4f69800/forecast/?spot_id=1398'
 
-(function() {
-  var seaweedAPI = "http://magicseaweed.com/api/e09cd1c1b299437bce992b12b4f69800/forecast/?spot_id=1";
-  $.getJSON( seaweedAPI, {
-
-  })
-})();
+$.ajax({
+    dataType: "jsonp",
+    url: url
+}).done(function(data) {
+    console.log(data);
+    // The result is an array, so loop over each one
+    $.each(data, function() {
+        // Do something with the item, e.g:
+        var diff = this.swell.maxBreakingHeight - this.swell.minBreakingHeight;
+        console.log(diff);
+    });
+});
