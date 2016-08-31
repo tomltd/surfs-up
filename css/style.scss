@@ -12,10 +12,14 @@ body {
 
 }
 
+@mixin theMessage($someWords) {
+	content: $someWords;
+}
+
 .surfs-up:before {
-  content: 'Surfs Up';
+  @include theMessage('Surfs Up');
 }
 
 .no-surf:before {
-  content: 'No surf right now';
+  @include theMessage('No Surf Now');
 }
