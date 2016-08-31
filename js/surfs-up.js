@@ -18,7 +18,7 @@ console.log(days[today]);
 console.log('hello');
 
 
-var url = 'http://magicseaweed.com/api/e09cd1c1b299437bce992b12b4f69800/forecast/?spot_id=1398';
+var url = 'http://magicseaweed.com/api/e09cd1c1b299437bce992b12b4f69800/forecast/?spot_id=118';
 
 $.ajax({
     dataType: "jsonp",
@@ -33,49 +33,40 @@ $.ajax({
         // Lets print out the rating with the time.
         var rating = this.fadedRating;
         var theTime = this.localTimestamp;
-        console.log("The rating at" + theTime + " is " + rating);
+        //convert theTime to hhmmss.
+        //var months = ["jan","feb","mar","apr","may","jun","jul","aug","sep","oct","nov","dec"];
+        var jsDate = new Date(theTime*1000);
+        if (rating == 0) {
+          rating = 'No Surf';
+        } else {
+          rating = "Surfs Up";
+        }
+        console.log("The rating at " + jsDate + " is " + rating);
     });
+
 });
 
 
-var rating = [];
+//var rating = [];
 
 // Loop the solid rating on a single forecast object.
-for (var i = 0; i < forecast.solidRating; i++) {
-    rating.push('<img src="http://cdnimages.magicseaweed.com/star_filled.png" />');
-}
+//for (var i = 0; i < forecast.solidRating; i++) {
+//    rating.push('<img src="http://cdnimages.magicseaweed.com/star_filled.png" />');
+//}
 
 // Loop the faded rating on a single forecast object.
-for (var i = 0; i < forecast.fadedRating; i++) {
-    rating.push('<img src="http://cdnimages.magicseaweed.com/star_empty.png" />');
-}
+//for (var i = 0; i < forecast.fadedRating; i++) {
+//    rating.push('<img src="http://cdnimages.magicseaweed.com/star_empty.png" />');
+//}
 
-document.getElementById("ratingContainer").innerHTML = rating.join(" ");
+//document.getElementById("ratingContainer").innerHTML = rating.join(" ");
 
 
 // Date stuff.
-function formatDate(date, fmt) {
-    function pad(value) {
-        return (value.toString().length < 2) ? '0' + value : value;
-    }
-    return fmt.replace(/%([a-zA-Z])/g, function (_, fmtCode) {
-        switch (fmtCode) {
-        case 'Y':
-            return date.getUTCFullYear();
-        case 'M':
-            return pad(date.getUTCMonth() + 1);
-        case 'd':
-            return pad(date.getUTCDate());
-        case 'H':
-            return pad(date.getUTCHours());
-        case 'm':
-            return pad(date.getUTCMinutes());
-        case 's':
-            return pad(date.getUTCSeconds());
-        default:
-            throw new Error('Unsupported format code: ' + fmtCode);
-        }
-    });
-}
+var months = ["jan","feb","mar","apr","may","jun","jul","aug","sep","oct","nov","dec"];
+var timestamp = "1374267600";
+var jsDate = new Date(timestamp*1000);
+console.log(jsDate);
 
-formatDate(new Date(timestamp), '%H:%m:%s');
+$('#dates').append('<div id="date">' + jsDate.toDateString() + '</div>'+
+'<div id="month">' + months[jsDate.getMonth()] + '</div>');
