@@ -30,5 +30,25 @@ $.ajax({
         // Do something with the item, e.g:
         var diff = this.swell.maxBreakingHeight - this.swell.minBreakingHeight;
         console.log(diff);
+        var rating = this.fadedRating;
+        var theTime = this.localTimestamp;
+        console.log("The rating at" + theTime + " is " + rating);
     });
 });
+
+//console.log(data.["0"].solidRating);
+
+
+var rating = [];
+
+// Loop the solid rating on a single forecast object.
+for (var i = 0; i < forecast.solidRating; i++) {
+    rating.push('<img src="http://cdnimages.magicseaweed.com/star_filled.png" />');
+}
+
+// Loop the faded rating on a single forecast object.
+for (var i = 0; i < forecast.fadedRating; i++) {
+    rating.push('<img src="http://cdnimages.magicseaweed.com/star_empty.png" />');
+}
+
+document.getElementById("ratingContainer").innerHTML = rating.join(" ");
