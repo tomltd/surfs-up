@@ -16,8 +16,10 @@ body {
 #the-message {
   font-size: 2em;
   width: 7em;
-  span {
+	text-align: center;
+  .the-surf {
     color: darkgreen;
+		margin-top: 0;
   }
 }
 
