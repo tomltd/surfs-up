@@ -102,6 +102,7 @@ jQuery(document).ready(function($) {
   // The message function.
   var isThereSurf = function(theDay, theMessage, theLocation) {
     $('#the-message').append('<p>' + theDay + ' ' + '<div class="the-surf">' + theMessage + '</div>' + ' ' + 'at' + ' ' + theLocation + ' ' + 'for the next few hours' + '</p>');
+    $('.loading-area').css('display', 'none');
   };
 
   // Date stuff.
