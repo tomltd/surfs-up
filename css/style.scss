@@ -2,14 +2,15 @@
 
 body {
 	margin: auto;
-	font-family: 'Kaushan Script', cursive;
+  font-family: 'Baloo Tamma', cursive;
 	background-color:#7A8691;
 }
 
 .wrapper {
   display: flex;
   flex-flow: wrap column;
-
+  align-items: center;
+  margin-top: 2em;
 }
 
 @mixin theMessage($someWords) {
