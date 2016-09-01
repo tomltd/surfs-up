@@ -13,6 +13,22 @@ body {
   margin-top: 2em;
 }
 
+#the-message {
+  font-size: 2em;
+  width: 7em;
+  span {
+    color: darkgreen;
+  }
+}
+
+
+
+
+
+
+
+
+
 @mixin theMessage($someWords) {
 	content: $someWords;
 }

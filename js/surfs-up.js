@@ -70,7 +70,7 @@ jQuery(document).ready(function($) {
   });
 
   var isThereSurf = function(theDay, theMessage, theLocation) {
-    $('#the-message').append('<p>' + theDay + ' ' + 'there is ' + theMessage + ' ' + 'at' + ' ' + theLocation + '</p>');
+    $('#the-message').append('<p>' + theDay + ' ' + 'there is' + ' ' + '<span>' + theMessage + '</span>' + ' ' + 'at' + ' ' + theLocation + 'for the next few hours' + '</p>');
   };
 
   // Date stuff.
