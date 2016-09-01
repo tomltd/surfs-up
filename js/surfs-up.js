@@ -5,6 +5,10 @@ jQuery(document).ready(function($) {
   var today = now.getDay();
   console.log(days[today]);
 
+  var d = new Date();
+  var n = d.getHours();
+  console.log(n);
+
   console.log('hello');
 
   // bacton 1398 // 110 mile 118
@@ -48,7 +52,31 @@ jQuery(document).ready(function($) {
     }
     //document.getElementById("ratingContainer").innerHTML = rating.join(" ");
 
+
+    var d = new Date();
+    var n = d.getHours();
     var theSlot = 0;
+
+    if (n <= 3) {
+      theSlot = 0;
+    } else if (n > 2 && n <= 6) {
+      theSlot = 1;
+    } else if (n > 5 && n <= 8) {
+      theSlot = 2;
+    } else if (n > 8 && n <= 11) {
+      theSlot = 3;
+    } else if (n > 11 && n <= 14) {
+      theSlot = 4;
+    } else if (n > 14 && n <= 17) {
+      theSlot = 5;
+    } else if (n > 17 && n <= 20) {
+      theSlot = 6;
+    } else if (n > 20) {
+      theSlot = 7;
+    }
+
+
+    console.log('The slot is ' + theSlot);
     var surfSpot = '100 Mile Beach';
 
     var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
@@ -90,21 +118,28 @@ jQuery(document).ready(function($) {
   enableHighAccuracy: true,
   timeout: 5000,
   maximumAge: 0
-};
+  };
 
-function success(pos) {
-  var crd = pos.coords;
+  function success(pos) {
+    var crd = pos.coords;
 
-  console.log('Your current position is:');
-  console.log('Latitude : ' + crd.latitude);
-  console.log('Longitude: ' + crd.longitude);
-  console.log('More or less ' + crd.accuracy + ' meters.');
-};
+    console.log('Your current position is:');
+    console.log('Latitude : ' + crd.latitude);
+    console.log('Longitude: ' + crd.longitude);
+    console.log('More or less ' + crd.accuracy + ' meters.');
+  };
 
-function error(err) {
-  console.warn('ERROR(' + err.code + '): ' + err.message);
-};
+  function error(err) {
+    console.warn('ERROR(' + err.code + '): ' + err.message);
+  };
 
-navigator.geolocation.getCurrentPosition(success, error, options);  
+  navigator.geolocation.getCurrentPosition(success, error, options);
+
+  // Get the current Time stamp with underscore.
+  var timeThatIsNow = function() {
+    return _.now();
+  };
+  console.log(timeThatIsNow());
+
 
 });
