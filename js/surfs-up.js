@@ -8,7 +8,9 @@ jQuery(document).ready(function($) {
   console.log('hello');
 
   // bacton 1398 // 110 mile 118
-  var url = 'http://magicseaweed.com/api/e09cd1c1b299437bce992b12b4f69800/forecast/?spot_id=118';
+  //var url = 'http://magicseaweed.com/api/e09cd1c1b299437bce992b12b4f69800/forecast/?spot_id=118';
+  // Just the stuff I need.
+  var url = 'http://magicseaweed.com/api/e09cd1c1b299437bce992b12b4f69800/forecast/?spot_id=118&fields=localTimestamp,swell.*,fadedRating,solidRating';
 
   $.ajax({
     dataType: "jsonp",
@@ -19,7 +21,7 @@ jQuery(document).ready(function($) {
     $.each(forecast, function() {
       // Do something with the item, e.g:
       var diff = this.swell.maxBreakingHeight - this.swell.minBreakingHeight;
-      console.log(diff);
+      console.log('The swell diff is' + ' ' + diff);
       // Lets print out the rating with the time.
       var rating = this.fadedRating;
       var theTime = this.localTimestamp;
