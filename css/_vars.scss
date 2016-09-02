@@ -3,3 +3,10 @@
 $surfs-green: #004600;
 $surfs-light: #fdf5e6;
 $surfs-light-blue: #7A8691;
+
+
+// Fonts
+@mixin fa($content) {
+  font-family: FontAwesome;
+  content: $content;
+}
