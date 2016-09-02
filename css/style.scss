@@ -27,6 +27,14 @@ body {
   }
 }
 
+footer {
+	a {
+		&:hover {
+			color: $surfs-green;
+		}
+	}
+}
+
 
 
 
