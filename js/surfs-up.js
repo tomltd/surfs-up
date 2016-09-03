@@ -84,10 +84,12 @@ jQuery(document).ready(function($) {
     var now = new Date(forecast[0].localTimestamp * 1000);
     var today = now.getDay();
 
-    // This if you should surf during the current time slot.
+    // TODO make sure this is working - This if you should surf during the current time slot.
     var theTimeNow = new Date(forecast[theSlot].localTimestamp * 1000);
-    var shouldYouSurf = forecast[theSlot].fadedRating;
-    if (shouldYouSurf === 0) {
+    var theFadedRating = forecast[theSlot].fadedRating;
+    var theSolidRating = forecast[theSlot].solidRating;
+    var shouldYouSurf = 'Do not know';
+    if (theFadedRating === 0 || theSolidRating === 0) {
       shouldYouSurf = 'No Surf';
     } else {
       shouldYouSurf = 'Surfs Up';
