@@ -41,17 +41,6 @@ jQuery(document).ready(function($) {
       console.log("The rating at " + jsDate + " is " + rating);
     });
 
-    var rating = [];
-
-    // Loop the solid rating on a single forecast object.
-    for (var i = 0; i < forecast.solidRating; i++) {
-      rating.push('<img src="http://cdnimages.magicseaweed.com/star_filled.png" />');
-    }
-    // Loop the faded rating on a single forecast object.
-    for (var i = 0; i < forecast.fadedRating; i++) {
-      rating.push('<img src="http://cdnimages.magicseaweed.com/star_empty.png" />');
-    }
-    //document.getElementById("ratingContainer").innerHTML = rating.join(" ");
 
     // Get the time slot
     var d = new Date();
@@ -89,6 +78,9 @@ jQuery(document).ready(function($) {
     var theFadedRating = forecast[theSlot].fadedRating;
     var theSolidRating = forecast[theSlot].solidRating;
     var shouldYouSurf = theSolidRating + theFadedRating;
+    console.log('The faded rating ' + theFadedRating);
+    console.log('The solid rating ' + theSolidRating);
+    console.log('Should you surf now ' + shouldYouSurf);
     if (shouldYouSurf === 0) {
       shouldYouSurf = 'No Surf';
     } else {
