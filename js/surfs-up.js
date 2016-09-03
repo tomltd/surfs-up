@@ -11,10 +11,11 @@ jQuery(document).ready(function($) {
 
   console.log('hello');
 
-  // East Runton 1396 // 110 mile 118
+  // Walcott 1399
+  // 110 mile 118
   //var url = 'http://magicseaweed.com/api/e09cd1c1b299437bce992b12b4f69800/forecast/?spot_id=118';
   // Just the stuff I need.
-  var url = 'http://magicseaweed.com/api/e09cd1c1b299437bce992b12b4f69800/forecast/?spot_id=1396&fields=localTimestamp,swell.*,fadedRating,solidRating';
+  var url = 'http://magicseaweed.com/api/e09cd1c1b299437bce992b12b4f69800/forecast/?spot_id=1399&fields=localTimestamp,swell.*,fadedRating,solidRating';
 
   $.ajax({
     dataType: "jsonp",
@@ -77,7 +78,7 @@ jQuery(document).ready(function($) {
 
 
     console.log('The slot is ' + theSlot);
-    var surfSpot = 'East Runton';
+    var surfSpot = 'Walcott';
 
     var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
     var now = new Date(forecast[0].localTimestamp * 1000);
