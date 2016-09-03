@@ -28,17 +28,17 @@ jQuery(document).ready(function($) {
       var diff = this.swell.maxBreakingHeight - this.swell.minBreakingHeight;
       console.log('The swell diff is' + ' ' + diff);
       // Lets print out the rating with the time.
-      var rating = this.fadedRating;
+      var someRating = this.fadedRating;
       var theTime = this.localTimestamp;
       //convert theTime to hhmmss.
       //var months = ["jan","feb","mar","apr","may","jun","jul","aug","sep","oct","nov","dec"];
       var jsDate = new Date(theTime * 1000);
-      if (rating === 0) {
-        rating = 'No Surf';
+      if (someRating === 0) {
+        someRating = 'No Surf';
       } else {
-        rating = "Surfs Up";
+        someRating = "Surfs Up";
       }
-      console.log("The rating at " + jsDate + " is " + rating);
+      console.log("The rating at " + jsDate + " is " + someRating);
     });
 
 
