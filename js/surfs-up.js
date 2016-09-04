@@ -117,11 +117,4 @@ jQuery(document).ready(function($) {
 
   navigator.geolocation.getCurrentPosition(success, error, options);
 
-  // ToDo - Don't think I need this anymore - remove underscore.
-  // Get the current Time stamp with underscore.
-  var timeThatIsNow = function() {
-    return _.now();
-  };
-  console.log(timeThatIsNow());
-
 });
